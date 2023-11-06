@@ -6,7 +6,7 @@ import axios from "axios";
     if(filter===""){
         dispatch({type: types.GET_PROFILE_REQUEST});
         return axios
-        .get(`https://reactserver-gdzy.onrender.com/profile?q=${query}`)
+        .get(`https://jsonplaceholder.typicode.com/users?q=${query}`)
         .then((res) => {
             dispatch({type: types.GET_PROFILE_SUCCESS, payload: res.data});
           
@@ -17,7 +17,7 @@ import axios from "axios";
     }else{
         dispatch({type: types.GET_PROFILE_REQUEST});
         return axios
-        .get(`https://reactserver-gdzy.onrender.com/profile?q=${filter}`)
+        .get(`https://jsonplaceholder.typicode.com/users?q=${filter}`)
         .then((res) => {
             dispatch({type: types.GET_PROFILE_SUCCESS, payload: res.data});
           
